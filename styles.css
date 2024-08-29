@@ -1,15 +1,20 @@
+/* Importing Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-h1, p {
-    font-family: 'Montserrat', sans-serif;
-}
-
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Typography */
+h1, p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -17,8 +22,10 @@ nav {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 5px 0;
+    padding: 10px 0;
+    z-index: 1000;
 }
+
 nav a {
     color: white;
     margin: 0 15px;
@@ -30,35 +37,55 @@ nav a:hover {
     background-color: #555;
 }
 
-
+/* Sections */
 section {
     padding: 30px 20px;
 }
 
+.home, .projects, .contact {
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.home {
+    background-color: antiquewhite;
+}
+
+/* Profile Section */
 .profile {
-    width: 50%;
-    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .profile img {
-    width: 40%;
-    height: 500px;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
     border-radius: 10px;
 }
 
+/* Resume Section */
 .resume {
-    width: 50%;
-    float: right;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .resume embed {
-    width: 100%;
+    width: 80%;
+    max-width: 500px;
     height: 500px;
 }
 
-.home, .projects, .contact {
-    height: 100vh;
+/* Contact Section */
+.contact {
+    background-color: #F08080;
+    text-align: center;
+    align-items: center;
+    padding: 50px 20px;
 }
+
 .contact-buttons a {
     display: inline-block;
     margin: 10px;
@@ -70,53 +97,38 @@ section {
     fill: white;
 }
 
-
 .contact-form {
     margin-top: 20px;
 }
 
-.contact {
-    background-color: #F08080;
-    text-align: center;
-    align-items: center;
-}
-
-
-#name, #email {
+#name, #email, #message {
     border-radius: 10px;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 400px;
 }
+
 #message {
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    width: 25%;
-    height: 100px;
+    height: 150px;
 }
 
-.home {
-    background-color: antiquewhite;
-}
-
-.home h1 {
-    text-align: center;
-}
-
-.projects h1 {
-    text-align: center;
-}
-
+/* Footer */
 footer {
     text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
 
+/* Grid Layout */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
+
 .grid-item {
     background-color: #f1f1f1;
     padding: 20px;
@@ -124,6 +136,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .grid-item a {
     margin: 0 0 10px;
 }
@@ -132,6 +145,7 @@ footer {
     margin: 0;
 }
 
+/* Buttons */
 input[type="submit"] {
     background-color: #333;
     color: white;
@@ -143,4 +157,31 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile, .resume {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .home, .projects, .contact {
+        padding-top: 70px;
+    }
+
+    #message {
+        width: 90%;
+        height: 100px;
+    }
+
+    nav {
+        padding: 15px 0;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
 }
